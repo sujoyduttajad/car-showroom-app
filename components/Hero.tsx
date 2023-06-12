@@ -1,11 +1,13 @@
 import React from "react";
-import CustomButton from "./CustomButton";
+import dynamic from 'next/dynamic';
+
+const CustomButton = dynamic(() => import('./CustomButton'), { ssr: false });
+
 
 const Hero = () => {
-
-    const handleScroll = () => {
-
-    }
+  const handleScroll = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="hero">
